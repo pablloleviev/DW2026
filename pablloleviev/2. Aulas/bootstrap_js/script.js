@@ -41,4 +41,4 @@ function renderizarCursos(listas) {
 
 renderizarCursos(cursos);
 
-btnTodos.addEventListener("click", () => {
+btnTodos.addEventListener("click", () => {});
