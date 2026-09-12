@@ -1,19 +1,28 @@
 <template>
- <div>
-  <HomeComponent />
- </div>
+  <div>
+    <HomeComponent />
+  </div>
 </template>
 
 <script>
-import HomeComponent from './components/HomeComponent.vue';
+import HomeComponent from "./components/HomeComponent.vue";
+
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HomeComponent
+    HomeComponent,
+  },
+  mounted() {
+    console.log("Minha Aplicação criou minha tela e todos os elemetos do DOM");
+  },
+  created() {
+    console.log("Minha aplicação criou meus Objetos JS");
+  },
+  errorCaptured() {
+    alert("Erro!!!");
   },
 };
 </script>
-
 
 <style>
 #app {
