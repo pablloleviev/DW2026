@@ -1,18 +1,30 @@
 <template>
-    <div>
-        <img :src="urlImg" :alt="descricao" width="100" height="100">
-    </div>
+  <div>
+    <img
+      v-if="isVisivel"
+      width="80"
+      height="80"
+      src="https://platobr.com.br/wp-content/uploads/2024/11/alexandre-moraes-e1732913214548-990x557.jpg"
+    />
+    <br />
+    <button @click="apareceEsconde()">{{ nomeBotao }}</button>
+  </div>
 </template>
 
 <script>
 export default {
-    name: "ImgComponent",
-    data()
-    {
-        return {
-            urlImg: "https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png",
-            descricao: "Ícone de usuário"
-        };
-    }
-}
+  name: "ImgComponent",
+  data() {
+    return {
+      isVisivel: false,
+      nomeBotao: "Aparecer",
+    };
+  },
+  methods: {
+    apareceEsconde() {
+      this.isVisivel = !this.isVisivel;
+      this.nomeBotao = this.isVisivel ? "Esconder" : "Aparecer";
+    },
+  },
+};
 </script>
